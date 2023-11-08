@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class CarRental {
     private LocalDateTime start;
@@ -19,7 +20,7 @@ public class CarRental {
     }
 
     public LocalDateTime getStart() {
-        return start;
+        return Optional.ofNullable(start).orElseThrow(()-> new RuntimeException("Class: \'CarRental\', Atributo \'Start\' Nulo"));
     }
 
     public void setStart(LocalDateTime start) {
