@@ -9,6 +9,7 @@ public class CarRental {
     private Invoice invoice;
 
     public CarRental(LocalDateTime start, LocalDateTime finish, Vehicle vehicle){}
+    public CarRental(){}
 
     public CarRental(LocalDateTime start, LocalDateTime finish, Vehicle vehicle, Invoice invoice) {
         this.start = start;
