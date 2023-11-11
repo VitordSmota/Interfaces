@@ -3,6 +3,8 @@ package ZChallenge;
 import ZChallenge.entities.Contract;
 import ZChallenge.entities.Installment;
 import ZChallenge.services.ContractService;
+import ZChallenge.services.PaypalService;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -27,7 +29,7 @@ public class Program {
         System.out.println("Entre com o número de parcelas: ");
         int n = sc.nextInt();
 
-        ContractService contractService = new ContractService(null);
+        ContractService contractService = new ContractService(new PaypalService());
 
         contractService.processContract(contract, n);
 
